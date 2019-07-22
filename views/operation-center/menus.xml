@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Action -->
+    <record id="menu_action-cron" model="ir.actions.act_window">
+        <field name="name">定时任务</field>
+        <field name="res_model">itsm.cron</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu-operation_center-cron" parent="menu-operation_center" action="menu_action-cron" name="定时任务"/>
+</odoo>

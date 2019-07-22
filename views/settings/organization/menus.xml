@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Action -->
+    <record id="menu_action-area" model="ir.actions.act_window">
+        <field name="name">区域管理</field>
+        <field name="res_model">itsm.area</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="menu_action-department" model="ir.actions.act_window">
+        <field name="name">部门管理</field>
+        <field name="res_model">itsm.department</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="menu_action-res_users" model="ir.actions.act_window">
+        <field name="name">用户管理</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+               eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('itsm_reception.view-tree-base-res_users')}),(0,0,{'view_mode':'form','view_id':ref('itsm_reception.view-form-base-res_users')})]"/>
+    </record>
+    <record id="server_action-res_users-reset_password" model="ir.actions.server">
+        <field name="name">重置密码</field>
+        <field name="model_id" ref="model_res_users"/>
+        <field name="binding_model_id" ref="model_res_users"/>
+        <field name="state">code</field>
+        <field name="code">records.reset_password()</field>
+    </record>
+    <record id="menu_action-position" model="ir.actions.act_window">
+        <field name="name">位置管理</field>
+        <field name="res_model">itsm.position</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="menu_action-working_group" model="ir.actions.act_window">
+        <field name="name">工作组管理</field>
+        <field name="res_model">itsm.working_group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu-settings-organization" parent="menu-root" name="组织与权限"/>
+    <menuitem id="menu-settings-organization-area" parent="menu-settings-organization"
+              action="menu_action-area" name="区域管理"/>
+    <menuitem id="menu-settings-organization-department" parent="menu-settings-organization"
+              action="menu_action-department" name="部门管理"/>
+    <menuitem id="menu-settings-organization-res_users" parent="menu-settings-organization"
+              action="menu_action-res_users" name="用户管理"/>
+    <menuitem id="menu-settings-organization-position" parent="menu-settings-organization"
+              action="menu_action-position" name="位置管理"/>
+    <menuitem id="menu-settings-organization-working-group" parent="menu-settings-organization"
+              action="menu_action-working_group" name="工作组管理"/>
+</odoo>

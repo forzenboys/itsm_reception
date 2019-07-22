@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_itsm_device_checklines" model="ir.actions.act_window">
+            <field name="name">巡检设备</field>
+            <field name="res_model">itsm.device.check.lines</field>
+            <field name="domain">[('device_check','=',check_id)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <record id="view_itsm_device_checklines_tree" model="ir.ui.view">
+        <field name="name">Itsm Device Check Lines Tree</field>
+        <field name="model">itsm.device.check.lines</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="device_check"/>
+                <field name="device"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_itsm_device_check_lines_form" model="ir.ui.view">
+        <field name="name">Itsm Device Check Lines Form</field>
+        <field name="model">itsm.device.check.lines</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- <button name="action_back" string="Back"
+                        help="Return to the previous screen"
+                        type="object" class="mr8" icon="fa-chevron-left"/> -->
+                    <button name="_add_device" string="添加设备"
+                        help="添加已扫描设备"
+                        type="object" icon="fa-print"
+                        class="btn-primary mt8 mb8"/>
+                </header>
+                <group>
+                    <field name="device_check"/>
+                    <field name="device"/>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

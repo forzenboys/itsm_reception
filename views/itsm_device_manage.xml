@@ -1,0 +1,264 @@
+<odoo>
+  <data>
+    <record id="view_tree_itsm_device_manage" model="ir.ui.view">
+        <field name="name">Itsm_Device_Manage_Tree</field>
+        <field name="model">itsm.device.manage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="state"/>
+                <field name="number"/>
+                <field name="name"/>
+                <field name="ip"/>
+                <field name="category"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_itsm_device_manage" model="ir.ui.view">
+        <field name="name">Itsm_Device_Manage_Form</field>
+        <field name="model">itsm.device.manage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook>
+                        <page string="基本属性" colspan="6">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="category"/>
+                                    <field name="state"/>
+                                    <field name="robot_name"/>
+                                    <field name="ip"/>
+                                    <field name="img" widget="binary"/>
+                                    <field name="fujian" widget="many2many_binary"/>
+                                </group>
+                                <group>
+                                    <field name="use"/>
+                                    <field name="depart_id"/>
+                                    <field name="manager_id"/>
+                                    <field name="provider_id"/>
+                                    <field name="area"/>
+                                    <field name="location"/>
+                                    <field name="info"/>
+                                    <field name="qr_img" widget="image"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="资产属性" colspan="6">
+                            <group>
+                                <group>
+                                    <field name="number_property"/>
+                                    <field name="brand_type"/>
+                                    <field name="save_site"/>
+                                    <field name="user"/>
+                                    <field name="repair_start" widget="date"/>
+                                    <field name="repair_contract" widget="date"/>
+                                </group>
+                                <group>
+                                    <field name="number_contract"/>
+                                    <field name="serve_sale"/>
+                                    <field name="comming_day" widget="date"/>
+                                    <field name="user_depart"/>
+                                    <field name="repair_end" widget="date"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="配置属性">
+                            <h1><field name="category_name"/></h1>
+                            <group  attrs = "{'invisible':[('category_name','!=','硬件')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                </group>
+                            </group>
+
+                            <group attrs = "{'invisible':[('category_name','!=','PC机')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                    <field name="cpu_brand"/>
+                                    <field name="cpu_hz"/>
+                                    <field name="memory_size"/>
+                                    <field name="area_type"/>
+                                    <field name="mac"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                    <field name="cpu_type"/>
+                                    <field name="cpu_number"/>
+                                    <field name="disk_size"/>
+                                    <field name="ip_address"/>
+                                    <field name="belongs"/>
+                                </group>
+                            </group>
+
+                            <group attrs = "{'invisible':[('category_name','!=','服务器')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                    <field name="cpu_brand"/>
+                                    <field name="cpu_hz"/>
+                                    <field name="memory_size"/>
+                                    <field name="area_type"/>
+                                    <field name="mac"/>
+                                    <field name="room"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                    <field name="cpu_type"/>
+                                    <field name="cpu_number"/>
+                                    <field name="disk_size"/>
+                                    <field name="ip_address"/>
+                                    <field name="belongs"/>
+                                    <field name="chest"/>
+                                </group>
+                            </group>
+
+                            <group attrs = "{'invisible':[('category_name','!=','网络设备')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                    <field name="port_number"/>
+                                    <field name="vlan_belong"/>
+                                    <field name="trench_number"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                    <field name="port_number_use"/>
+                                    <field name="memory"/>
+                                    <field name="ios"/>
+                                </group>
+                            </group>
+
+                            <group attrs = "{'invisible':[('category_name','!=','存储设备')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                    <field name="capacity"/>
+                                    <field name="capacity_used"/>
+                                    <field name="backup"/>
+                                    <field name="room"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                    <field name="capacity_count"/>
+                                    <field name="capacity_use"/>
+                                    <field name="ip_group"/>
+                                    <field name="chest"/>
+                                </group>
+                            </group>
+
+                            <group  attrs = "{'invisible':[('category_name','!=','数据库')]}">
+                                <group>
+                                    <field name="config_brand"/>
+                                    <field name="config_number"/>
+                                    <field name="config_contract"/>
+                                    <field name="config_depart"/>
+                                    <field name="config_time_buy"/>
+                                    <field name="soft_path"/>
+                                    <field name="server"/>
+                                </group>
+                                <group>
+                                    <field name="config_type"/>
+                                    <field name="config_owner"/>
+                                    <field name="config_repaire"/>
+                                    <field name="config_user"/>
+                                    <field name="config_broken"/>
+                                    <field name="soft_version"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="关联工单">
+
+                        </page>
+                        <page string="基线记录">
+
+                        </page>
+                        <page string="配置项关系">
+
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <record id="view_itsm_device_category" model="ir.ui.view">
+          <field name="name">Itsm_Device_Category</field>
+          <field name="model">itsm.device.category</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="parent_id"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="view_itsm_device_category_form" model="ir.ui.view">
+          <field name="name">Itsm_Device_Category_Form</field>
+          <field name="model">itsm.device.category</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="parent_id"/>
+                      </group>
+
+                  </sheet>
+
+              </form>
+          </field>
+      </record>
+
+      <record id="view_search_itsm_device_manage" model="ir.ui.view">
+          <field name="name">资产</field>
+          <field name="model">itsm.device.manage</field>
+          <field name="arch" type="xml">
+              <search>
+                  <group>
+                      <filter name="group_by_category" string="分类" context="{'group_by':'category'}"/>
+                  </group>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>

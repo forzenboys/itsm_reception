@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- ResUsers -->
+    <record id="view-tree-base-res_users" model="ir.ui.view">
+        <field name="name">用户</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="login"/>
+                <field name="mobile"/>
+                <field name="position_id"/>
+                <field name="level"/>
+                <field name="department_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view-form-base-res_users" model="ir.ui.view">
+        <field name="name">用户</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group string="账号信息">
+                        <field name="login"/>
+                    </group>
+                    <group>
+                        <group string="基本信息">
+                            <field name="test"/>
+                            <field name="level"/>
+                            <field name="area_id"/>
+                            <field name="department_id"/>
+                            <field name="job"/>
+                        </group>
+                        <group string="联系方式">
+                            <field name="position_id"/>
+                            <field name="room_number"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                    <group string="权限设置">
+                        <group>
+                            <field name="groups_id" widget="many2many_checkboxes"/>
+                        </group>
+                        <group>
+                            <field name="working_group_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="wages_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!--饼图所需导包-->
+                <script src="/itsm_reception/static/src/js/echarts.js"></script>
+                <script src="/itsm_reception/static/src/js/higtcharts.js"></script>
+                <script src="/itsm_reception/static/src/js/highcharts-more.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/xml/highCharts_zhuti.js"></script>
+                <!--VUE导包-->
+                <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+                <!-- Element -->
+                <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"/>
+                <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/star.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/bing.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/zhu.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/measure.js"></script>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/xml/column.js"></script>
+                <style>
+                    .working_condition {
+                    background-color: rgb(60,163,232);
+                    border: none;
+                    color: white;
+                    padding: 8px 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin: 1px 1px;
+                    cursor: pointer;
+                    margin-top: 6px;
+                    width:70px;
+                    }
+                    .priority {
+                    background-color: rgb(128,208,100);
+                    border: none;
+                    color: white;
+                    padding: 8px 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin: 1px 1px;
+                    cursor: pointer;
+                    width:50px;
+                    margin-top: 6px;
+                    }
+                    .p1{
+                    display: inline;
+                    margin-right: 180px;
+                    }
+                    .h2{
+                    margin-bottom: 20px;
+                    }
+                    .evaluation_results{
+                    color:rgb(247, 186, 42);
+                    font-size: 18px;
+                    }
+                    .approval_state{
+                    background-color: rgb(60,163,232);
+                    border: none;
+                    color: white;
+                    padding: 8px 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin: 1px 1px;
+                    cursor: pointer;
+                    margin-right: 20px;
+                    }
+                    .satisfaction_return_working_condition {
+                    background-color: rgb(60,163,232);
+                    border: none;
+                    color: white;
+                    padding: 3px 6px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    cursor: pointer;
+                    margin-top: 5px;
+                    }
+                    .material_seletion{
+                       background: #F4A460;
+                       text-align: center;
+                       color:white;
+                    }
+                    .el-rate__icon{
+                        font-size: 25px;
+                    }
+                    .label{
+                        margin-top:17px;
+                    .highcharts-axis-labels highcharts-yaxis-labels{
+                        width:20px;
+                    }
+                    }
+					.test{
+						background: red;
+					}
+                </style>
+            </xpath>
+        </template>
+    </data>
+</odoo>

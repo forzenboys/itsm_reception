@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <record id="reception_business_applications" model="ir.actions.act_window">
+            <field name="name">业务申请</field>
+            <field name="res_model">itsm.reception_business_applications</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <record id="reception_trouble_repair" model="ir.actions.act_window">
+            <field name="name">故障报修</field>
+            <field name="res_model">itsm.reception_trouble_repair</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <record id="work_order_action" model="ir.actions.act_window">
+            <field name="name">业务申请</field>
+            <field name="res_model">itsm.work_order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="event_processing_action" model="ir.actions.act_window">
+            <field name="name">事件处理</field>
+            <field name="res_model">itsm.event_processing</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="reception_registration_action" model="ir.actions.act_window">
+            <field name="name">故障登记表</field>
+            <field name="res_model">itsm.failure_registration</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <record id="satisfaction_return_action" model="ir.actions.act_window">
+            <field name="name">满意度回访</field>
+            <field name="res_model">itsm.satisfaction_return</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="material_seletion_action" model="ir.actions.act_window">
+            <field name="name">物料选择表</field>
+            <field name="res_model">itsm.material_seletion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--权限组设置-->
+        <record id="action_res_groups" model="ir.actions.act_window">
+            <field name="name">ITSM权限设置</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.groups</field>
+            <field name="view_type">form</field>
+            <field name="context">{'search_default_no_share': 1}</field>
+            <field name="domain">[("full_name","!=","设置")]</field>
+            <field name="help">A group is a set of functional areas that will be assigned to the user in order to give them access and rights to specific applications and tasks in the system. You can create custom groups or edit the ones existing by default in order to customize the view of the menu that users will be able to see. Whether they can have a read, write, create and delete access right can be managed from here.</field>
+        </record>
+
+        <record id="satisfaction_measure_action" model="ir.actions.act_window">
+            <field name="name">大数据展示</field>
+            <field name="res_model">itsm.satisfaction_measure</field>
+            <field name="view_mode">tree</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem id="itsm_reception" name="综合服务台" web_icon="itsm_reception,static/description/icon.jpg"  />
+        <menuitem id="itsm_workbench" name="工作台" action="board.open_board_my_dash_action" parent="itsm_reception" sequence="1"/>
+        <menuitem id="itsm_reception_service_hall" name="服务大厅" parent="itsm_reception" sequence="2"/>
+        <menuitem id="itsm_reception_business_applications" name="业务申请" action="reception_business_applications" parent="itsm_reception_service_hall"/>
+        <menuitem id="itsm_reception_trouble_repair" name="故障报修" action="reception_trouble_repair" parent="itsm_reception_service_hall"/>
+        <menuitem id="itsm_work_order_menu" name="我的工单" parent="itsm_reception" sequence="3"/>
+        <menuitem id="itsm_work_order" name="业务申请工单" action="work_order_action" parent="itsm_work_order_menu"/>
+        <menuitem id="itsm_event_processing" name="事件处理工单" action="event_processing_action" parent="itsm_work_order_menu"/>
+        <menuitem id="itsm_reception_registration" name="故障登记" action="reception_registration_action" parent="itsm_reception" sequence="4"/>
+        <menuitem id="itsm_satisfaction_return" name="满意度回访" action="satisfaction_return_action" parent="itsm_reception" sequence="5"/>
+        <menuitem id="itsm_satisfaction_measure_action_menu" name="数据展示" action="satisfaction_measure_action" parent="itsm_reception" sequence="7"/>
+
+        <menuitem id="menu-root" web_icon="itsm_reception,static/description/icon1.png" name="平台管理"/>
+        <menuitem id="menu-operation_center" parent="menu-root" name="运维中心"/>
+        <menuitem id="itsm_action_res_groups_menu" name="权限组设置" action="action_res_groups" parent="menu-root" sequence="5"/>
+    </data>
+</odoo>

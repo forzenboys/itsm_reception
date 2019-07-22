@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record id="module_category_itsm" model="ir.module.category">
+            <field name="name">itsm工程师</field>
+        </record>
+
+        <record id="module_category_itsm_users" model="ir.module.category">
+            <field name="name">itsm用户组</field>
+        </record>
+
+        <record id="group_salary_manager2" model="res.groups">
+            <field name="name">itsm工单管理一线组</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="group_salary_manager3" model="res.groups">
+            <field name="name">itsm工单管理二线组</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="group_salary_manager4" model="res.groups">
+            <field name="name">itsm工单管理三线组</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="itsm_user" model="res.groups">
+            <field name="name">itsm普通用户</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="itsm_manager" model="res.groups">
+            <field name="name">itsmmanager管理员</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

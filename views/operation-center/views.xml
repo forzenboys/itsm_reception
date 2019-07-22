@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view-search-base-cron" model="ir.ui.view">
+        <field name="name">定时任务</field>
+        <field name="model">itsm.cron</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <!--<filter name="runing" string="已启用" domain="[('use','=',True)]"/>-->
+                <!--<filter name="stoped" string="已停用" domain="[('use','=',False)]"/>-->
+                <!--<separator/>-->
+                <filter name="days" string="每日任务" domain="[('interval','=','days')]"/>
+                <filter name="weeks" string="每周任务" domain="[('interval','=','weeks')]"/>
+                <filter name="months" string="每月任务" domain="[('interval','=','months')]"/>
+                <filter name="years" string="每年任务" domain="[('interval','=','years')]"/>
+                <filter name="once" string="一次性任务" domain="[('interval','=','once')]"/>
+                <filter name="others" string="周期性任务" domain="[('interval','=','others')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view-tree-base-cron" model="ir.ui.view">
+        <field name="name">定时任务</field>
+        <field name="model">itsm.cron</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="interval"/>
+                <field name="worker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view-form-base-cron" model="ir.ui.view">
+        <field name="name">定时任务</field>
+        <field name="model">itsm.cron</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group string="任务信息">
+                        <field name="interval"/>
+                        <field name="days" attrs="{'invisible':[('interval','!=','others')]}"/>
+                        <field name="hours" attrs="{'invisible':[('interval','!=','others')]}"/>
+                        <field name="start_at"/>
+                        <field name="worker"/>
+                        <field name="remark"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

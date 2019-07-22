@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- ServiceType -->
+    <record id="view-serach-base-service_type" model="ir.ui.view">
+        <field name="name">分类搜索</field>
+        <field name="model">itsm.service_type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <group>
+                    <filter name="group_by_parent_id" string="上级分类" context="{'group_by': 'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ServiceCatalogue -->
+    <record id="view-form-base-service_catalogue" model="ir.ui.view">
+        <field name="name">服务目录</field>
+        <field name="model">itsm.service_catalogue</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group string="服务信息">
+                        <field name="introduction"/>
+                        <field name="type_id"/>
+                        <field name="level"/>
+                        <field name="response_time_limit"/>
+                        <field name="slove_time_limit"/>
+                    </group>
+                    <group string="详细说明">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

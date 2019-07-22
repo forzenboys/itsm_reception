@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Action -->
+    <record id="menu_action-service_type" model="ir.actions.act_window">
+        <field name="name">分类管理</field>
+        <field name="res_model">itsm.service_type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_group_by_parent_id":True}</field>
+    </record>
+    <record id="menu_action-service_catalogue" model="ir.actions.act_window">
+        <field name="name">目录管理</field>
+        <field name="res_model">itsm.service_catalogue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--<record id="menu_action-sla" model="ir.actions.act_window">-->
+        <!--<field name="name">服务级别协议管理</field>-->
+        <!--<field name="res_model">itsm.sla</field>-->
+        <!--<field name="view_mode">tree,form</field>-->
+    <!--</record>-->
+    <record id="menu_action-evaluation_tag" model="ir.actions.act_window">
+        <field name="name">评价标签管理</field>
+        <field name="res_model">itsm.evaluation_tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu-settings-service" parent="menu-root" name="服务管理"/>
+    <menuitem id="menu-settings-service-service_type" parent="menu-settings-service"
+              action="menu_action-service_type" name="分类管理"/>
+    <menuitem id="menu-settings-service-service_catalogue" parent="menu-settings-service"
+              action="menu_action-service_catalogue" name="目录管理"/>
+    <!--<menuitem id="menu-settings-service-sla" parent="menu-settings-service"-->
+              <!--action="menu_action-sla" name="服务级别协议管理"/>-->
+    <menuitem id="menu-settings-service-evaluation_tag" parent="menu-settings-service"
+              action="menu_action-evaluation_tag" name="评价标签管理"/>
+</odoo>

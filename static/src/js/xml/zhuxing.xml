@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="zhu_echarts" name="Login List">
+            <div id="wrap" class="container">
+                <script src="/itsm_reception/static/src/js/echarts.js"></script>
+                <div id="main" style="width: 600px;height:400px;"></div>
+                <script type="text/javascript" src="/itsm_reception/static/src/js/zhuxing_echarts.js"></script>
+            </div>
+        </template>
+    </data>
+</odoo>

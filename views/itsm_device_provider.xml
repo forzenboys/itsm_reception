@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <record id="view_kanban_itsm_provider" model="ir.ui.view">
+            <field name="name">Itsm_Device_Provider_kanban</field>
+            <field name="model">itsm.device.provider</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="nickname"/>
+                    <field name="tel"/>
+                    <field name="fax"/>
+                    <field name="web"/>
+                    <field name="is_provider"/>
+                    <field name="is_sever"/>
+                </kanban>
+                <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="text-center">
+                                    <i class="fa fa-building" role="img" aria-label="Enterprise" title="Enterprise"></i> <strong><field name="name"/></strong>
+                                </div>
+                                <hr class="mt4 mb4"/>
+                                <div class="row">
+                                    <div t-if="record.fax.value" class="col-6 text-center">
+                                        <strong>Email:</strong>
+                                    </div>
+                                    <div t-if="record.tel.value" class="col-6 text-center">
+                                        <strong>Phone</strong>
+                                    </div>
+                                    <div t-if="record.fax.value" class="col-6 text-center">
+                                        <field name="fax"/>
+                                    </div>
+                                    <div t-if="record.tel.value" class="col-6 text-center">
+                                        <field name="tel"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+            </field>
+        </record>
+        <record id="view_tree_itsm_device_provider" model="ir.ui.view">
+            <field name="name">Itsm_Device_Provider_tree</field>
+            <field name="model">itsm.device.provider</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="nickname"/>
+                    <field name="tel"/>
+                    <field name="fax"/>
+                    <field name="web"/>
+                    <field name="is_provider"/>
+                    <field name="is_sever"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_form_itsm_device_provider" model="ir.ui.view">
+            <field name="name">Itsm_Device_Provider_form</field>
+            <field name="model">itsm.device.provider</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                       <group>
+                            <field name="name"/>
+                            <field name="nickname"/>
+                            <field name="is_provider"/>
+                            <field name="is_sever"/>
+                            <field name="tel"/>
+                            <field name="fax"/>
+                            <field name="web"/>
+                            <field name="address"/>
+                            <field name="email"/>
+                            <field name="info"/>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

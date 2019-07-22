@@ -1,0 +1,69 @@
+.TimeLine {
+list-style-type: none;
+}
+.TimeLine-Item {
+display: flex;
+}
+.TimeLine-Item-Line {
+margin-top: 4px;
+margin-right: 10px;
+}
+.TimeLine-Item-Line-Point {
+width: 16px;
+height: 16px;
+background: #ddd;
+border-radius: 50%;
+}
+.TimeLine-Item:first-child .TimeLine-Item-Line-Point {
+background: #08f;
+}
+.TimeLine-Item-Line-Line {
+margin-left: 5px;
+width: 6px;
+height: 100%;
+background: #eee;
+}
+.TimeLine-Item-Content {
+margin-bottom: 40px;
+width: 300px;
+}
+.TimeLine-Item-Content-Main {
+margin-bottom: 5px;
+color: #aaa;
+font-size: 14px;
+}
+.TimeLine-Item-Content-Header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 5px;
+color: #666;
+}
+.TimeLine-Item-Content-Footer span {
+padding: 5px;
+color: #666;
+font-size: 12px;
+background: #fafafa;
+border-radius: 3px;
+}
+.TimeLine-Item-Content-Header-Date {
+padding: 2px 10px;
+color: #999;
+font-size: 14px;
+border: 1px #eee solid;
+border-radius: 25px;
+}
+.TimeLine-Item:first-child .TimeLine-Item-Content-Main {
+color: #999;
+}
+.TimeLine-Item:first-child .TimeLine-Item-Content-Header-Title {
+color: #333;
+font-weight: bold;
+}
+.TimeLine-Item:first-child .TimeLine-Item-Content-Header-Date {
+color: #666;
+background: #eee;
+}
+.TimeLine-Item:last-child .TimeLine-Item-Line-Line {
+display: none;
+}

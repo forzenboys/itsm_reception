@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Action -->
+    <record id="menu_action-notice" model="ir.actions.act_window">
+        <field name="name">信息公告</field>
+        <field name="res_model">itsm.notice</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu-settings-system" parent="menu-root" name="系统功能"/>
+    <menuitem id="menu-settings-system-notice" parent="menu-settings-system"
+              action="menu_action-notice" name="信息公告"/>
+</odoo>

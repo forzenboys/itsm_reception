@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+
+        <record id="view_tree_itsm_device_check" model="ir.ui.view">
+            <field name="name">Itsm_Device_Check_tree</field>
+            <field name="model">itsm.device.check</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="executor"/>
+                    <field name="creater"/>
+                    <field name="start_day"/>
+                    <field name="end_day"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_form_itsm_device_check" model="ir.ui.view">
+            <field name="name">Itsm_Device_Check_form</field>
+            <field name="model">itsm.device.check</field>
+            <field name="arch" type="xml">
+                <form colspan="6">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button class="oe_stat_button"
+                            icon="fa-barcode"
+                            help="已扫描配置项"
+                            type="action"
+                            name="action_itsm_device_checklines"
+                            context="{'check_id': active_id}">
+                            <field string="已巡检"
+                                name="scan_count"
+                                widget="statinfo"/>
+                        </button>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="executor"/>
+                            <field name="_barcode_scanned" widget="barcode_handler"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_day"/>
+                                <field name="device_owner"/>
+                                <field name="location"/>
+                            </group>
+                            <group>
+                                <field name="end_day"/>
+                                <field name="depart_use"/>
+                                <field name="category"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="device"/>
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_calendar_checkout" model="ir.ui.view">
+        <field name="model">itsm.device.check</field>
+        <field name="arch" type="xml">
+            <calendar date_start="start_day"
+                color="executor">
+                <field name="name" />
+
+            </calendar>
+        </field>
+        </record>
+<!--        <record id="view_graph_check" model="ir.ui.view">-->
+<!--        <field name="model">itsm.device.check</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <graph type="bar">-->
+<!--                <field name="name" />-->
+<!--                <field name="" type="measure" />-->
+<!--            </graph>-->
+<!--        </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

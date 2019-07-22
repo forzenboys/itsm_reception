@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Notice -->
+    <record id="view-tree-base-notice" model="ir.ui.view">
+        <field name="name">信息公告</field>
+        <field name="model">itsm.notice</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="subject_id"/>
+                <field name="publish"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
