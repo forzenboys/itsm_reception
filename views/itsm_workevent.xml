@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="itsm_work_event_view_tree" model="ir.ui.view">
+        <field name="name">工单</field>
+        <field name="model">itsm.workevent</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="number"/>
+                <field name="department"/>
+                <field name="tips"/>
+                <field name="name"/>
+                <field name="user"/>
+                <field name="time"/>
+                <field name="tel"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="itsm_work_event_view_form" model="ir.ui.view">
+        <field name="name">工单填写</field>
+        <field name="model">itsm.workevent</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                     <field name="state"
+                    widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                           <field name="number"/>
+                            <field name="department"/>
+                            <field name="tips"/>
+                            <field name="name"/>
+                            <field name="description" widget="html"/>
+                        </group>
+                        <group>
+                            <field name="user"/>
+                            <field name="time"/>
+                            <field name="tel"/>
+                            <field name="state"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="itsm_work_event_action" model="ir.actions.act_window">
+        <field name="name">gongdan</field>
+        <field name="res_model">itsm.workevent</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="itsm_work_event" name="工单填写" action="itsm_work_event_action" parent="itsm_work_order_menu"/>
+</odoo>

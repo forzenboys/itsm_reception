@@ -13,10 +13,10 @@ odoo.define("star.Star", function(require) {
       console.log(this);
 
       this.vm = new Vue({
-        template: "<el-rate v-model='value' @change='set_data' show-text></el-rate>",
+        template: "<el-rate v-model='value' @change='set_data' ></el-rate>",
         data() {
           return {
-            value: 3
+            value: 3,
           }
         },
         mounted() {

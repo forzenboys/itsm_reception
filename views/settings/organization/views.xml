@@ -38,8 +38,8 @@
                         <group string="联系方式">
                             <field name="position_id"/>
                             <field name="room_number"/>
-                            <field name="mobile"/>
-                            <field name="email"/>
+                            <field name="mobile" widget="phone"/>
+                            <field name="email" widget="email"/>
                         </group>
                     </group>
                     <group string="权限设置">

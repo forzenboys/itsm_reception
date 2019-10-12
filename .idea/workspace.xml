@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c4a1806d-bf56-4bf1-b74a-188edd300653" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/workevent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/event_process_report.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/itsm_workevent.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/itsm_reception.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/itsm_reception.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cron.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ir_attachment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ir_attachment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/itsm_device_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/itsm_device_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/itsm_device_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/itsm_device_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/itsm_device_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/itsm_device_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/notice.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/notice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/work_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/work_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/itsm_security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security/itsm_security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/css/kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/css/kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/css/ul.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/css/ul.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/bing.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/bing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/echarts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/highcharts-more.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/highcharts-more.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/higtcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/higtcharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/measure.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/measure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/star.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/star.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/xml/column.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/xml/column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/xml/highCharts_zhuti.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/xml/highCharts_zhuti.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/xml/zhuxing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/xml/zhuxing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/zhu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/zhu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/src/js/zhuxing_echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/src/js/zhuxing_echarts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/itsm_device_check.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/itsm_device_check.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/itsm_device_manage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/itsm_device_manage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/itsm_device_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/itsm_device_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/itsm_device_provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/itsm_device_provider.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/operation-center/menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/operation-center/menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/operation-center/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/operation-center/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/organization/menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/organization/menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/organization/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/organization/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/service/menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/service/menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/service/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/service/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/system/menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/system/menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/settings/system/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/settings/system/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/templates.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wizard/itsm_device_check_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/wizard/itsm_device_check_lines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wizard/itsm_device_check_lines.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wizard/itsm_device_check_lines.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wizard/print_device_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/wizard/print_device_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wizard/print_device_label.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wizard/print_device_label.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="itsm_reception" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/views.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="512" column="69" lean-forward="true" selection-start-line="512" selection-start-column="69" selection-end-line="512" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="991">
+              <caret line="491" column="45" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
+              <folding>
+                <element signature="e#24#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templates.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itsm_device_provider.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/itsm_device_provider.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itsm_device_check.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/itsm_device_check.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="work_order.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/work_order.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7155">
+              <caret line="479" column="30" selection-start-line="479" selection-start-column="30" selection-end-line="479" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itsm_device_manage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/itsm_device_manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1095">
+              <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__manifest__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__manifest__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itsm_device_manage.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/itsm_device_manage.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3630">
+              <caret line="242" column="26" selection-start-line="242" selection-start-column="26" selection-end-line="242" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rgb</find>
+      <find>zhu</find>
+      <find>mm</find>
+      <find>rgb(</find>
+      <find>test</find>
+      <find>invi</find>
+      <find>事件</find>
+      <find>action_transfer</find>
+      <find>action_receipt</find>
+      <find>satisfaction_return</find>
+      <find>itsm.failure_registration</find>
+      <find>Many2</find>
+      <find>itsm.view-tree-base-res_users</find>
+      <find>itsm.view-form-b​​ase-res_users</find>
+      <find>itsm.view-form-base-res_users</find>
+      <find>reception_business_applications</find>
+      <find>定时</find>
+      <find>work_order</find>
+      <find>model_itsm_cron</find>
+      <find>itsm.work_order</find>
+      <find>response_time_limit</find>
+      <find>first_record</find>
+      <find>create_time</find>
+      <find>cron_name</find>
+      <find>required</find>
+      <find>itsm.reception_business_applications</find>
+      <find>completion_time</find>
+      <find>$(function(){ var t1 = $(&quot;#t1&quot;).text() if (t1 == &quot;已超时&quot;){ $(&quot;#t1&quot;).css(&quot;background&quot;,&quot;red&quot;); }; var t2 = $(&quot;#t2&quot;).text() if (t2 == &quot;已超时&quot;){ $(&quot;#t2&quot;).css(&quot;background&quot;,&quot;red&quot;); }; });</find>
+      <find>&quot;working_condition&quot;: &quot;已超时&quot;</find>
+      <find>kanban</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>100</replace>
+      <replace>test</replace>
+      <replace>column</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/static/src/css/kanban.css" />
+        <option value="$PROJECT_DIR$/static/src/js/searchView.js" />
+        <option value="$PROJECT_DIR$/models/ir_attachment.py" />
+        <option value="$PROJECT_DIR$/static/src/js/higtcharts.js" />
+        <option value="$PROJECT_DIR$/static/src/js/highcharts-more.js" />
+        <option value="$PROJECT_DIR$/static/src/js/measure.js" />
+        <option value="$PROJECT_DIR$/static/src/js/echarts.js" />
+        <option value="$PROJECT_DIR$/static/src/js/test.js" />
+        <option value="$PROJECT_DIR$/static/src/js/xml/zhuxing.xml" />
+        <option value="$PROJECT_DIR$/static/src/js/zhuxing_echarts.js" />
+        <option value="$PROJECT_DIR$/controllers/controllers.py" />
+        <option value="$PROJECT_DIR$/static/src/js/bing.js" />
+        <option value="$PROJECT_DIR$/static/src/js/xml/test.js" />
+        <option value="$PROJECT_DIR$/static/src/js/zhu.js" />
+        <option value="$PROJECT_DIR$/static/src/js/xml/highCharts_zhuti.js" />
+        <option value="$PROJECT_DIR$/static/src/js/xml/column.js" />
+        <option value="$PROJECT_DIR$/security/ir.model.access.csv" />
+        <option value="$PROJECT_DIR$/models/__init__.py" />
+        <option value="$PROJECT_DIR$/views/settings/organization/menus.xml" />
+        <option value="$PROJECT_DIR$/views/templates.xml" />
+        <option value="$PROJECT_DIR$/models/service.py" />
+        <option value="$PROJECT_DIR$/views/itsm_device_manage.xml" />
+        <option value="$PROJECT_DIR$/views/itsm_device_menu.xml" />
+        <option value="$PROJECT_DIR$/views/menus.xml" />
+        <option value="$PROJECT_DIR$/__manifest__.py" />
+        <option value="$PROJECT_DIR$/models/organization.py" />
+        <option value="$PROJECT_DIR$/models/work_order.py" />
+        <option value="$PROJECT_DIR$/security/itsm_security.xml" />
+        <option value="$PROJECT_DIR$/models/itsm_device_check.py" />
+        <option value="$PROJECT_DIR$/models/itsm_device_manage.py" />
+        <option value="$PROJECT_DIR$/static/src/js/star.js" />
+        <option value="$PROJECT_DIR$/models/models.py" />
+        <option value="$PROJECT_DIR$/views/views.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="158" />
+    <option name="y" value="75" />
+    <option name="width" value="1449" />
+    <option name="height" value="815" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="itsm_reception" type="b2602c69:ProjectViewProjectNode" />
+              <item name="itsm_reception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="itsm_reception" type="b2602c69:ProjectViewProjectNode" />
+              <item name="itsm_reception" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="itsm_reception" type="b2602c69:ProjectViewProjectNode" />
+              <item name="itsm_reception" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="itsm_reception" type="b2602c69:ProjectViewProjectNode" />
+              <item name="itsm_reception" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="itsm_reception" type="b2602c69:ProjectViewProjectNode" />
+              <item name="itsm_reception" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\static\description" />
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\models" />
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\views" />
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\static\src\css" />
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\odoo12\Odoo 12.0\server\my-modules\itsm_reception\static\description" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.itsm">
+    <configuration name="controllers" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="itsm_reception" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/controllers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controllers/controllers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="itsm" type="PythonConfigurationType" factoryName="Python">
+      <module name="itsm_reception" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\odoo12\Odoo 12.0\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/odoo-bin" />
+      <option name="PARAMETERS" value="--update=&quot;itsm_reception&quot; --dev=all" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.itsm" />
+      <item itemvalue="Python.controllers" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.controllers" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4a1806d-bf56-4bf1-b74a-188edd300653" name="Default Changelist" comment="" />
+      <created>1560405230160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560405230160</updated>
+    </task>
+    <task id="LOCAL-00001" summary="meseeage">
+      <created>1563783191018</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563783191018</updated>
+    </task>
+    <task id="LOCAL-00002" summary="meseeage23">
+      <created>1563783217411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563783217411</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="158" y="75" width="1449" height="815" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32974428" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50126743" side_tool="true" weight="0.2857143" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49873257" weight="0.2857143" />
+      <window_info anchor="bottom" auto_hide="true" id="Version Control" order="7" weight="0.23180594" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32974428" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32974428" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49824563" visible="true" weight="0.23169865" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="SciView" />
+      <window_info id="Structure" order="0" sideWeight="0.5017544" side_tool="true" weight="0.18314321" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
+      <window_info id="Favorites" order="1" sideWeight="0.502008" side_tool="true" weight="0.18314321" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="SHOW_DETAILS_IN_CHANGES" value="false" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="meseeage" />
+    <MESSAGE value="meseeage23" />
+    <option name="LAST_COMMIT_MESSAGE" value="meseeage23" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6075">
+          <caret line="405" column="15" lean-forward="true" selection-start-line="405" selection-start-column="15" selection-end-line="405" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/work_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7155">
+          <caret line="479" column="30" lean-forward="true" selection-start-line="479" selection-start-column="30" selection-end-line="479" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/itsm_device_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__manifest__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_manage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="242" column="26" selection-start-line="242" selection-start-column="26" selection-end-line="242" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7350">
+          <caret line="491" column="45" lean-forward="true" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/css/kanban.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/searchView.js" />
+    <entry file="file://$PROJECT_DIR$/static/src/js/xml/highCharts_zhuti.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/xml/zhuxing.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/xml/column.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2775">
+          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/security/ir.model.access.csv" />
+    <entry file="file://$PROJECT_DIR$/views/operation-center/menus.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/description/icon1.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/description/icon.png" />
+    <entry file="file://$PROJECT_DIR$/views/operation-center/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/cron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/settings/organization/menus.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ir_attachment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/itsm_device_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-781">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/itsm_device_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/notice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/organization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281">
+          <caret line="63" column="11" lean-forward="true" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/itsm_security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/ir.model.access.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="120" lean-forward="true" selection-start-line="1" selection-start-column="120" selection-end-line="1" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/bing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/highcharts-more.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="150" column="43" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/higtcharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="37458" column="66" selection-start-line="37458" selection-start-column="62" selection-end-line="37458" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/measure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret column="40" selection-start-column="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/zhu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/zhuxing_echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/js/star.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/menus.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="78" column="121" selection-start-line="78" selection-start-column="121" selection-end-line="78" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/work_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7155">
+          <caret line="479" column="30" selection-start-line="479" selection-start-column="30" selection-end-line="479" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/itsm_device_manage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="242" column="26" selection-start-line="242" selection-start-column="26" selection-end-line="242" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/itsm_device_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__manifest__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="991">
+          <caret line="491" column="45" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="512" column="69" lean-forward="true" selection-start-line="512" selection-start-column="69" selection-end-line="512" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

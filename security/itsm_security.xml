@@ -27,13 +27,25 @@
         </record>
 
         <record id="itsm_user" model="res.groups">
-            <field name="name">itsm普通用户</field>
+            <field name="name">itsm普通用户1</field>
             <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
         <record id="itsm_manager" model="res.groups">
-            <field name="name">itsmmanager管理员</field>
+            <field name="name">itsm总管理员</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="itsm_manager2" model="res.groups">
+            <field name="name">itsm资产管理员</field>
+            <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="itsm_manager3" model="res.groups">
+            <field name="name">itsm物料管理员</field>
             <field name="category_id" ref="itsm_reception.module_category_itsm_users"/>
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>

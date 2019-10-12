@@ -4,17 +4,17 @@
 
     'summary': """itsm服务台""",
 
-    'description': """工单故障报修""",
+    'description': """添加工单图表筛选等功能""",
 
     'author': "My Company",
     'website': "http://www.yourcompany.com",
     'category': 'Uncategorized',
-    'version': '0.1',
-    'depends': ['base', 'board', 'barcodes', 'itsm_stock'],
+    'version': '12.1.1',
+    'depends': ['base', 'board', 'barcodes', 'itsm_stock','web_dashboard'],
     'external_dependencies': {'python': ['pystrich']},
     'data': [
-        'security/ir.model.access.csv',
         'security/itsm_security.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/menus.xml',
         'views/templates.xml',
@@ -34,6 +34,7 @@
         'report/device_label_reports.xml',
         'report/device_label_templates.xml',
         'wizard/itsm_device_check_lines.xml',
+        # 'views/itsm_workevent.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

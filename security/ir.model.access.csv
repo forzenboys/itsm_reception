@@ -26,3 +26,14 @@ access_itsm_device_category,Itsm_Device_Category,model_itsm_device_category,base
 access_itsm_device_check,Itsm_Device_Check,model_itsm_device_check,base.group_user,1,1,1,1
 access_itsm_device_provider,Itsm_Device_providre,model_itsm_device_provider,base.group_user,1,1,1,1
 access_itsm_device_provider1,Itsm_Device_providre1,model_itsm_device_check_lines,base.group_user,1,1,1,1
+
+access_res_groups,Itsm_res_groups,model_res_groups,itsm_reception.itsm_manager,1,1,1,1
+access_ir_rule,Itsm_ir_rule,model_ir_rule,itsm_reception.itsm_manager,1,1,1,1
+access_ir_model_access,Itsm_ir_model_access,model_ir_model_access,itsm_reception.itsm_manager,1,1,1,1
+access_ir_module_category,Itsm_ir_module_category,model_ir_module_category,itsm_reception.itsm_manager,1,1,1,1
+access_ir_ui_view,Itsm_ir_ui_view,model_ir_ui_view,itsm_reception.itsm_manager,1,1,1,1
+access_res_partner,Itsm_res_partner,model_res_partner,itsm_reception.itsm_manager,1,1,1,1
+access_res_company,Itsm_res_company,model_res_company,itsm_reception.itsm_manager,1,1,1,1
+access_res_users,Itsm_res_users,model_res_users,itsm_reception.itsm_manager,1,1,1,1
+
+itsm_work_event,itsm_work_event,model_itsm_workevent,,1,1,1,1

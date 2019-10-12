@@ -18,6 +18,7 @@ class Cron(models.Model):
     device_ids = fields.Many2many(comodel_name="itsm.device.manage", string="巡检对象")
     start_at = fields.Datetime(string="起始时间")
     remark = fields.Text(string="任务内容及要求")
+    is_created = fields.Boolean()
 
     @api.model
     def create(self, vals):
@@ -26,16 +27,21 @@ class Cron(models.Model):
         """
         cron_vals = self.get_cron_vals(vals)
 
-        itsm_cron = super(Cron, self).create(vals)
-        cron_vals["code"] = "model.send_mission(%S)" % itsm_cron.id
+
+        cron_vals["code"] = "model.send_mission()"
         cron = self.env["ir.cron"].create(cron_vals)
-        itsm_cron.write({
-            "cron_id": cron.id
+        vals["cron_id"] = cron.id
+        vals["is_created"] = True
+        itsm_cron = super(Cron, self).create(vals)
+        cron.write({
+            "code": "model.send_mission(" + str(itsm_cron.id) + ")"
         })
+        return itsm_cron
 
     @api.multi
     def write(self, vals):
-        raise UserError("暂不支持修改定时任务")
+        if self.is_created:
+            raise UserError("暂不支持修改定时任务")
 
     @api.multi
     def unlink(self):
@@ -59,7 +65,7 @@ class Cron(models.Model):
         })
 
     def get_cron_vals(self, vals):
-        model_id = self.env.ref("itsm.model_itsm_cron").id
+        model_id = self.env.ref("itsm_reception.model_itsm_cron").id
 
         cron_vals = {
             "name": vals.get("name"),

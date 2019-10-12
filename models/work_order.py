@@ -10,13 +10,14 @@ class Itsm_Work_Order(models.Model):
     name = fields.Char(string="业务类型")
     working_condition = fields.Char(string="工作状态")
     task_coding = fields.Char(string="任务编号")
+    server_id = fields.Char('服务单号')
     title = fields.Char(string="标题")
     applicant_name = fields.Many2one("res.users", string="申请人", store=True, required=True)
     receiver = fields.Many2one("res.users", string="接单人", store=True)
     phone = fields.Char(string="联系电话")
     create_time = fields.Datetime(string="创建时间")
     priority = fields.Char(string="优先级")
-    applicant_department = fields.Char(string="部门")
+    applicant_department = fields.Many2one('itsm.department',string="申请部门")
     describe = fields.Text(string="描述")
     response_time_limit = fields.Char(string="响应时限（时）")
     slove_time_limit = fields.Char(string="解决时限（时）")
@@ -242,25 +243,36 @@ class Itsm_Event_Processing(models.Model):
     事件处理工单
     """
     _name = "itsm.event_processing"
+    _description = "事件处理工单"
+    _order = "create_time desc"
+
+    # _inherit = ['mail.thread']
 
     name = fields.Char(string="业务类型")
     working_condition = fields.Char(string="工作状态")
     task_coding = fields.Char(string="任务编号")
+    server_id = fields.Char('服务单号')
     title = fields.Char(string="标题")
-    applicant_name = fields.Many2one("res.users", string="申请人", store=True)
+    user = fields.Char(string='申请人')
+    # applicant_name = fields.Many2one("res.users", string="申请人", store=True)
+    applicant_department = fields.Char(string="报障部门")
     receiver = fields.Many2one("res.users", string="接单人", store=True)
     phone = fields.Char(string="联系电话")
     create_time = fields.Datetime(string="创建时间")
     priority = fields.Char(string="优先级")
-    applicant_department = fields.Char(string="部门")
+    service_type = fields.Many2one('itsm.service_type', string='故障类别')
     enclosure = fields.Binary(string="附件", store=True)
-    describe = fields.Text(string="描述")
+    describe = fields.Html(string="故障描述")
+    analyze = fields.Char('故障分析')
     fault_equipment = fields.Many2many("itsm.device.manage", string="故障设备")
+    device_number = fields.Char('设备资产编号')
     material_seletion = fields.One2many("itsm.material_seletion", "name", string="物料选择")
     response_time_limit = fields.Char(string="响应时限（时）")
     slove_time_limit = fields.Char(string="解决时限（时）")
     acceptance_time = fields.Datetime(string="接单时间")
     response_completion = fields.Char(string="响应(完成)", default="待接单")
+
+
     solve = fields.Char(string="解决", default="待解决")
     approval_state = fields.Selection([
         ('draft', '待审批'),
@@ -283,6 +295,17 @@ class Itsm_Event_Processing(models.Model):
     feedback3 = fields.Char(string="评语", default="null")
     four_record = fields.Char(string="记录4", default="null")
     feedback4 = fields.Char(string="评语", default="null")
+
+    # cost_progress = fields.Integer(string="进度", compute="_compute_progress")
+    # @api.depends('create_time','slove_time_limit')
+    # def _compute_progress(self):
+    #     for record in self:
+    #         print(record.slove_time_limit)
+    #         now_time = datetime.datetime.now()
+    #         cost_time = (now_time-record.create_time).seconds
+    #         solve_time = int(record.slove_time_limit)*3600
+    #         print(round(cost_time/solve_time,2))
+
 
     def update_time(self, id):
         """
@@ -522,7 +545,7 @@ class Material_Seletion(models.Model):
     number = fields.Char(string="申请数量")
 
     @api.one
-    @api.depends("max_number", "material_name")
+    @api.depends("material_name")
     def material_seletion(self):
         """
         获取最大数量

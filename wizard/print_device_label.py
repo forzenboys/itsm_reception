@@ -7,7 +7,7 @@ class DeviceLabel(models.TransientModel):
 
     selected = fields.Boolean('打印',compute='_compute_selected')
     device_id = fields.Many2one('itsm.device.manage','设备',required=True,ondelete='cascade')
-    wizard_id = fields.Many2one('print.device.label','打印向导')
+    wizard_id = fields.Many2one('itsm.print.device.label','打印向导')
     qty_initial = fields.Integer('初始数量',default=1)
     qty = fields.Integer('标签数量',default=1)
 
@@ -65,7 +65,7 @@ class PrintDeviceLabel(models.TransientModel):
     template = fields.Selection(
         selection=[('itsm_reception.report_device_label_A4_57x35', 'Label 57x35mm (A4: 21 pcs on sheet, 3x7)')],
         string='标签模板',
-        default='itsm.report_device_label_A4_57x35',
+        default='itsm_reception.report_device_label_A4_57x35',
     )
     qty_per_device = fields.Integer(
         string='预打印数量',

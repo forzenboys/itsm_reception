@@ -22,10 +22,16 @@
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem id="menu_itsm_device_root" name="资产配置库" web_icon="itsm_reception,static/description/icon3.jpg"/>
-        <menuitem id="menu_itsm_device_manage" name="资产管理" action="action_itsm_device_manage" parent="menu_itsm_device_root"/>
-        <menuitem id="menu_itsm_device_check" name="资产盘点" action="action_itsm_device_check" parent="menu_itsm_device_root"/>
-        <menuitem id="menu_itsm_device_provider" name="供应商管理" action="action_itsm_device_provider" parent="menu_itsm_device_root"/>
-        <menuitem id="menu_itsm_device_category" name="配置项分类" action="action_itsm_device_category" parent="menu_itsm_device_root"/>
-<!--        <menuitem id="menu_itsm_device_checklines" name="巡检单" action="action_itsm_device_checklines" parent="menu_itsm_device_root"/>-->
+        <menuitem id="menu_itsm_device_manage" parent="menu_itsm_device_root" name="资产管理" action="action_itsm_device_manage" />
+        <menuitem id="menu_itsm_device_manage_son" parent="menu_itsm_device_manage" name="资产管理" action="action_itsm_device_manage" />
+
+        <menuitem id="menu_itsm_device_check"  parent="menu_itsm_device_root" name="资产盘点" action="action_itsm_device_check" />
+        <menuitem id="menu_itsm_device_check_son"  parent="menu_itsm_device_check" name="资产盘点" action="action_itsm_device_check" />
+
+        <menuitem id="menu_itsm_device_provider" parent="menu_itsm_device_root"  name="供应商管理" action="action_itsm_device_provider" />
+        <menuitem id="menu_itsm_device_provider_son" parent="menu_itsm_device_provider"  name="供应商管理" action="action_itsm_device_provider" />
+
+        <menuitem id="menu_itsm_device_category" parent="menu_itsm_device_root" name="配置项分类" action="action_itsm_device_category" />
+        <menuitem id="menu_itsm_device_category_son" parent="menu_itsm_device_category" name="配置项分类" action="action_itsm_device_category" />
     </data>
 </odoo>

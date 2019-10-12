@@ -5,12 +5,9 @@
         <field name="name">分类搜索</field>
         <field name="model">itsm.service_type</field>
         <field name="arch" type="xml">
-            <search>
+            <form>
                 <field name="name"/>
-                <group>
-                    <filter name="group_by_parent_id" string="上级分类" context="{'group_by': 'parent_id'}"/>
-                </group>
-            </search>
+            </form>
         </field>
     </record>
 
@@ -27,6 +24,7 @@
                     <group string="服务信息">
                         <field name="introduction"/>
                         <field name="type_id"/>
+                        <field name="service_type" attrs="{'invisible': [('type_id', '=', '业务申请')]}"/>
                         <field name="level"/>
                         <field name="response_time_limit"/>
                         <field name="slove_time_limit"/>

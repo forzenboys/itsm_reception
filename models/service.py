@@ -5,15 +5,16 @@ from odoo import models, fields, api
 class ServiceType(models.Model):
     _name = "itsm.service_type"
 
-    name = fields.Char(index=True, required=True, string="分类名称")
-    parent_id = fields.Many2one(comodel_name="itsm.service_type", index=True, string="上级分类")
-    child_ids = fields.One2many(comodel_name="itsm.service_type", inverse_name="parent_id", string="下级分类")
+    name = fields.Char(index=True, required=True, string="故障分类名称")
+    # parent_id = fields.Many2one(comodel_name="itsm.service_type", index=True, string="上级分类")
 
+   # child_ids = fields.One2many(comodel_name="itsm.service_type", inverse_name="parent_id", string="下级分类")
 
 class ServiceCatalogue(models.Model):
     _name = "itsm.service_catalogue"
 
-    name = fields.Char(required=True, string="服务目录")
+    name = fields.Char(required=True, string="服务目录名称")
+    service_type = fields.Many2one('itsm.service_type',string='故障类别')
     introduction = fields.Text(string="服务简介")
     description = fields.Html(string="详细说明")
     type_id = fields.Selection([('业务申请', '业务申请'), ('故障报修', '故障报修')], default="业务申请", required=True, string="所属分类")
@@ -34,10 +35,11 @@ class ServiceCatalogue(models.Model):
         emergency = str(vals["level"])
         response_time_limit = str(vals["response_time_limit"])
         slove_time_limit = str(vals["slove_time_limit"])
+        service_type = vals["service_type"]
         if str(vals["type_id"]) == "业务申请":
             self.env['itsm.reception_business_applications'].create_business_applications(name, id, emergency, response_time_limit, slove_time_limit)
         else:
-            self.env['itsm.reception_trouble_repair'].create_trouble_repair(name, id, emergency, response_time_limit, slove_time_limit)
+            self.env['itsm.reception_trouble_repair'].create_trouble_repair(name, id, emergency, response_time_limit, slove_time_limit,service_type)
         return odoo
 
     @api.multi

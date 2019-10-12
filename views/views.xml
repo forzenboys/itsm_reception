@@ -36,9 +36,9 @@
                             <field name="applicant_name"/>
                             <field name="applicant_department"/>
                             <field name="phone"/>
-                            <field name="enclosure" />
+                            <field name="number"/>
                         </group>
-                        <group string="故障描述">
+                        <group string="申请信息">
                             <field name="title"/>
                             <field name="execution_time"/>
                             <field name="emergency"/>
@@ -86,20 +86,27 @@
         <field name="arch" type="xml" >
             <form  create="false" >
                 <sheet>
-                    <group string="账号信息">
-                        <field name="name" invisible="1"/>
-                        <field name="applicant_name"/>
-                    </group>
+                    <!--<group string="账号信息">-->
+                        <!--<field name="name" invisible="1"/>-->
+                        <!--<field name="applicant_name"/>-->
+                        <!--<field name="applicant_department"/>-->
+                    <!--</group>-->
                      <group>
                         <group string="基本信息">
-                            <field name="phone"/>
+                            <field name="name" invisible="1"/>
+                            <field name="applicant_name"/>
+                            <field name="number"/>
+
+                            <!--<field name="phone"/>-->
                             <field name="telephone"/>
-                            <field name="position"/>
-                            <field name="room_number"/>
-                            <field name="enclosure"/>
+                            <field name="device_number"/>
+                            <!--<field name="position"/>-->
+                            <!--<field name="room_number"/>-->
+                            <!--<field name="enclosure"/>-->
                         </group>
                         <group string="故障描述">
                             <field name="title"/>
+                            <field name="applicant_department"/>
                             <field name="time_of_appointment"/>
                             <field name="fault_description"/>
                         </group>
@@ -122,9 +129,9 @@
                     <group string="账号信息">
                         <field name="name" invisible="1"/>
                         <field name="applicant_name"/>
-                        <field name="area" style="display:inline"/>
-                        <field name="position" style="display:inline"/>
-                        <field name="room_number" style="display:inline"/>
+                        <!--<field name="area" style="display:inline"/>-->
+                        <!--<field name="position" style="display:inline"/>-->
+                        <!--<field name="room_number" style="display:inline"/>-->
                         <field name="phone"/>
                         <field name="telephone"/>
                         <field name="time_of_appointment"/>
@@ -150,8 +157,19 @@
         <field name="model">itsm.work_order</field>
         <field name="arch" type="xml" >
             <tree create="false">
+                <!--<field name="title"/>-->
+                <!--<field name="applicant_department"/>-->
+                <!--<field name="server_id"/>-->
+                <!--<field name="user" />-->
+                <!--<field name="receiver" />-->
+                <!--<field name="create_time"/>-->
+                <!--<field name="priority" class="priority" />-->
+                <!--<field name="working_condition"/>-->
+
                 <field name="working_condition" class="working_condition"  />
-                <field name="task_coding" />
+                <!--<field name="task_coding" />-->
+                <field name="server_id"/>
+                <field name="applicant_department"/>
                 <field name="title" />
                 <field name="applicant_name" />
                 <field name="phone" />
@@ -172,12 +190,13 @@
                 <sheet>
                     <h1><field name="name" /></h1>
                     <span>
-                        <p class="p1">编号：<field name="task_coding" /></p>
+                        <!--<p class="p1">编号：<field name="task_coding" /></p>-->
+                        <p class="p1">服务单号：<field name="server_id" /></p>
                         <p class="p1">创建时间：<field name="create_time" style="width:210px;" /></p>
                         <p class="p1">状态：<field name="working_condition" class="working_condition" style="width:80px;"  /></p>
                     </span>
-                    <p id="t1" class="working_condition" style="width:80px;"><field name="response_completion"/></p>
-                    <p id="t2" class="working_condition" style="width:80px;"><field name="solve"/></p>
+                    <!--<p id="t1" class="working_condition" style="width:80px;"><field name="response_completion"/></p>-->
+                    <!--<p id="t2" class="working_condition" style="width:80px;"><field name="solve"/></p>-->
                     <group string="申请信息">
                         <group>
                             <field name="applicant_department" />
@@ -278,14 +297,19 @@
         <field name="name">事件处理工单</field>
         <field name="model">itsm.event_processing</field>
         <field name="arch" type="xml" >
-            <tree create="false">
-                <field name="working_condition" class="working_condition"  />
-                <field name="task_coding" />
-                <field name="title" />
-                <field name="applicant_name" />
-                <field name="phone" />
-                <field name="create_time" />
+            <tree create="false"
+                decoration-danger="working_condition=='已超时'"
+                decoration-info="working_condition=='待完成'"
+                decoration-success="working_condition=='已完成'"
+                decoration-muted="working_condition=='处理中'">
+                <field name="title"/>
+                <field name="applicant_department"/>
+                <field name="server_id"/>
+                <field name="user" />
+                <field name="receiver" />
+                <field name="create_time"/>
                 <field name="priority" class="priority" />
+                <field name="working_condition"/>
                 <!--操作按钮未完成-->
                 <!--<button type="object"  string="操作" class="btn btn-primary"/>-->
             </tree>
@@ -298,41 +322,47 @@
         <field name="arch" type="xml" >
             <form create="false">
                  <link href="/itsm_reception/static/src/css/ul.css" rel="stylesheet" type="text/css" />
+                <header>
+                    <button type="object" class="btn btn-primary" name="action_receipt" attrs="{'invisible':[('approval_state','!=','draft'),('approval_state','!=','appoint')]}" string="接单" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-info" name="action_appoint" attrs="{'invisible':[('approval_state','!=','draft')]}" string="指定接单人" groups="itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-secondary" name="action_transfer" attrs="{'invisible':[('approval_state','!=','frontline')]}" string="降级工单" groups="itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-primary" name="set_username" attrs="{'invisible':[('approval_state','!=','transfer')]}" string="降低后接单" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-dark" name="action_frontline" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','appoint')]}" string="升级工单" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3"/>
+                    <button type="object" class="btn btn-primary" name="set_username"  attrs="{'invisible':[('approval_state','!=','frontline')]}" string="升级后接单" groups="itsm_reception.group_salary_manager2"/>
+                    <button type="object" class="btn btn-success" name="action_done" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','frontline')]}" string="完成" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-success" name="action_done" attrs="{'invisible':[('approval_state','!=','appoint')]}" string="完成" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-danger" name="action_cancel" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','appoint')]}" string="不通过" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
+                    <button type="object" class="btn btn-secondary" name="action_evaluate" attrs="{'invisible':[('approval_state','!=','done')]}" string="评价" groups="itsm_reception.itsm_user"/>
+                </header>
                 <sheet>
-                    <h1><field name="name" /></h1>
+                    <h1><field name="title" /></h1>
                     <span>
-                        <p class="p1">编号：<field name="task_coding" /></p>
+                        <!--<p class="p1">编号：<field name="task_coding" /></p>-->
+                        <p class="p1">服务单号：<field name="server_id" /></p>
                         <p class="p1">创建时间：<field name="create_time" style="width:210px;" /></p>
                         <p class="p1">状态：<field name="working_condition" class="working_condition" style="width:80px;"  /></p>
                     </span>
-                    <p id="t1" class="working_condition" style="width:80px;"><field name="response_completion"/></p>
-                    <p id="t2" class="working_condition" style="width:80px;"><field name="solve"/></p>
+                    <!--<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"><field name="cost_progress"/></div>-->
+                    <!--<p id="t1" class="working_condition" style="width:80px;"><field name="response_completion"/></p>-->
+                    <!--<p id="t2" class="working_condition" style="width:80px;"><field name="solve"/></p>-->
                     <group string="故障信息">
                         <group>
-                            <field name="title" />
+                            <field name="service_type"/>
+                            <field name="applicant_department"/>
                             <field name="describe" />
                             <field name="priority" />
-                            <field name="enclosure" />
+                            <field name="analyze"/>
                         </group>
                         <group>
-                            <field name="applicant_name" />
+
                             <field name="receiver" />
                             <field name="phone" />
-                            <field name="fault_equipment" widget="many2many_tags" />
+                            <field name="device_number"/>
                             <field name="material_seletion" options="{'no_create_edit': True}" />
                         </group>
                     </group>
                     <footer style="text-align:center;">
-                        <button type="object" name="action_receipt" attrs="{'invisible':[('approval_state','!=','draft'),('approval_state','!=','appoint')]}" string="接单" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_appoint" attrs="{'invisible':[('approval_state','!=','draft')]}" string="指定接单人" class="approval_state" groups="itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_transfer" attrs="{'invisible':[('approval_state','!=','frontline')]}" string="降级工单" class="approval_state" groups="itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="set_username" attrs="{'invisible':[('approval_state','!=','transfer')]}" string="降低后接单" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_frontline" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','appoint')]}" string="升级工单" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3"/>
-                        <button type="object" name="set_username"  attrs="{'invisible':[('approval_state','!=','frontline')]}" string="升级后接单" class="approval_state" groups="itsm_reception.group_salary_manager2"/>
-                        <button type="object" name="action_done" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','frontline')]}" string="完成" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_done" attrs="{'invisible':[('approval_state','!=','appoint')]}" string="完成" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_cancel" attrs="{'invisible':[('approval_state','!=','receipt'),('approval_state','!=','appoint')]}" string="不通过" class="approval_state" groups="itsm_reception.group_salary_manager2,itsm_reception.group_salary_manager3,itsm_reception.group_salary_manager4"/>
-                        <button type="object" name="action_evaluate" attrs="{'invisible':[('approval_state','!=','done')]}" string="评价" class="approval_state" groups="itsm_reception.itsm_user"/>
+
                         <field name="approval_state" widget="statusbar" statusbar_visible="draft" class="oe_right" invisible="1"/>
                     </footer>
                     <h2 class="h2">处理记录</h2>
@@ -401,15 +431,152 @@
                     });
                     </script>
                 </sheet>
+                <!--<div class="oe_chatter">-->
+                  <!--<field name="message_follower_ids"-->
+                    <!--widget="mail_followers"/>-->
+                  <!--<field name="message_ids" widget="mail_thread"/>-->
+                <!--</div>-->
             </form>
         </field>
       </record>
+
+      <!--<record id="itsm_event_process_kanban" model="ir.ui.view">-->
+          <!--<field name="name">事件处理工单看板</field>-->
+          <!--<field name="model">itsm.event_processing</field>-->
+          <!--<field name="arch" type="xml">-->
+              <!--<kanban default_group_by="working_condition">-->
+                  <!--<field name="working_condition"/>-->
+                  <!--<field name="server_id"/>-->
+                  <!--<field name="title" />-->
+                  <!--<field name="applicant_name" />-->
+                  <!--<field name="phone" />-->
+                  <!--<field name="create_time" />-->
+                  <!--<field name="priority"/>-->
+                  <!--<templates>-->
+                    <!--<t t-name="kanban-box">-->
+                        <!--<div class="oe_kanban_card-->
+                            <!--oe_kanban_global_click">-->
+                            <!--<field name="title" />-->
+                        <!--</div>-->
+                    <!--</t>-->
+                <!--</templates>-->
+              <!--</kanban>-->
+          <!--</field>-->
+      <!--</record>-->
+
+      <record id="itsm_event_processing_graph" model="ir.ui.view">
+        <field name="name">事件处理工单图表</field>
+        <field name="model">itsm.event_processing</field>
+        <field name="arch" type="xml" >
+            <graph type="bar">
+                <field name="create_time" interval="day"/>
+                <field name="working_condition" />
+
+            </graph>
+        </field>
+      </record>
+
+      <record id="itsm_event_processing_pivot" model="ir.ui.view">
+        <field name="name">project task pivot</field>
+        <field name="model">itsm.event_processing</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="receiver"  type="row"/>
+                <field name="working_condition" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+      <record id="search_view_itsm_event_processing" model="ir.ui.view">
+          <field name="name">事件搜索视图</field>
+          <field name="model">itsm.event_processing</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="working_condition"/>
+                  <field name="applicant_department"/>
+                  <field name="create_time"/>
+                  <field name="solve"/>
+
+                  <filter name="date01_filter" string="报障时间" date="create_time"/>
+                  <filter name="soloved" string="已完成" domain="[('working_condition','=','已完成')]"/>
+                  <filter name="working" string="处理中" domain="[('working_condition','=','处理中')]"/>
+                  <filter name="group01_filter" string="根据部门分组" domain="[]" context="{'group_by':'applicant_department'}"/>
+
+              </search>
+          </field>
+      </record>
+
+      <record id="itsm_event_processing_dashboard" model="ir.ui.view">
+            <field name="name">事件处理工单状况</field>
+            <field name="model">itsm.event_processing</field>
+            <field name="arch" type="xml">
+                <dashboard>
+
+                    <view ref="itsm_reception.itsm_event_processing_graph"
+                        type="graph" />
+                    <group string="工单概览">
+                        <aggregate name="all_process"
+                            string="工单总计"
+                            group_operator="count"
+                            field="id"/>
+                        <aggregate name="waitting_process"
+                            string="待接单"
+                            domain="[('working_condition', '=', '处理中')]"
+                            group_operator="count"
+                            field="id" />
+                        <aggregate name="completed_process"
+                            string="已完成"
+                            domain="[('working_condition', '=', '已完成')]"
+                            group_operator="count" field="id"/>
+                        <formula name="completed_average"
+                            string="完成率"
+                            value="record.completed_process/record.all_process"
+                            widget="percentage"/>
+                    </group>
+
+                    <view ref="itsm_reception.itsm_event_processing_pivot"
+                        type="pivot"/>
+                </dashboard>
+            </field>
+        </record>
+      <record id="itsm_work_order_graph" model="ir.ui.view">
+        <field name="name">申请工单图表</field>
+        <field name="model">itsm.work_order</field>
+        <field name="arch" type="xml" >
+            <graph type="bar">
+                <field name="create_time" interval="day" type="row"/>
+                <field name="working_condition" type="col"/>
+                <field name="solve" type="col"/>
+            </graph>
+        </field>
+      </record>
+
+      <record id="search_view_itsm_work_order" model="ir.ui.view">
+          <field name="name">申请视图</field>
+          <field name="model">itsm.work_order</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="working_condition"/>
+                  <field name="applicant_department"/>
+                  <field name="create_time"/>
+                  <field name="solve"/>
+
+                  <filter name="date01_filter" string="申请时间" date="create_time"/>
+                  <filter name="soloved" string="已完成" domain="[('working_condition','=','已完成')]"/>
+                  <filter name="working" string="处理中" domain="[('working_condition','=','处理中')]"/>
+                  <filter name="group01_filter" string="根据部门分组" domain="[]" context="{'group_by':'applicant_department'}"/>
+
+              </search>
+          </field>
+      </record>
+
+
 
       <record id="itsm_satisfaction_return_tree" model="ir.ui.view">
         <field name="name">满意度回访</field>
         <field name="model">itsm.satisfaction_return</field>
         <field name="arch" type="xml" >
-            <tree create="false" toolbar="0">
+            <tree create="false">
                 <field name="working_condition" class="satisfaction_return_working_condition"  />
                 <field name="title" />
                 <field name="name" />
@@ -512,6 +679,42 @@
             </form>
         </field>
       </record>
+
+      <record id="action_itsm_workevents" model="ir.actions.act_window">
+            <field name="name">故障登记表单</field>
+            <field name="res_model">itsm.workevent</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+      <record id="itsm_workevent_form" model="ir.ui.view">
+        <field name="name">故障登记_表单</field>
+        <field name="model">itsm.workevent</field>
+        <field name="arch" type="xml" >
+            <form>
+                <sheet>
+                    <group >
+                        <field name="name"/>
+                        <field name="number"/>
+                        <field name="department"/>
+                        <field name="user"/>
+                        <field name="enginer"/>
+                        <field name="tel"/>
+                        <field name="device_number"/>
+                        <field name="eventtype"/>
+                        <field name="description"/>
+                        <field name="note"/>
+                    </group>
+                    <footer style="text-align:center;">
+
+                        <button  type="object" string="提交" name="get_applications_data" class="btn btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+      </record>
+
+
 
   </data>
 </odoo>

@@ -11,7 +11,8 @@ class Itsm_Reception_Business_Applications(models.Model):
     itsm_id = fields.Char("id")
     name = fields.Char(string="名称")
     applicant_name = fields.Many2one("res.users", string="申请人姓名", store=True, compute="_compute_name")
-    applicant_department = fields.Char(related="applicant_name.department_id.name", string="申请人部门", store=True)
+    applicant_department = fields.Many2one('itsm.department',string='申请部门')
+    number = fields.Char('服务单编号')
     phone = fields.Char(string="联系电话")
     execution_time = fields.Datetime(string="执行时间")
     title = fields.Char(string="标题", store=True, compute="_compute_name")
@@ -78,13 +79,14 @@ class Itsm_Reception_Business_Applications(models.Model):
         data = {
             "name": self.name,
             "working_condition": "处理中",
+            "server_id": self.number,
             "priority": self.emergency,
             "task_coding": coding,
             "title": self.title,
             "applicant_name": self.applicant_name.id,
             "phone": self.phone,
             "create_time": create_time,
-            "applicant_department": self.applicant_department,
+            "applicant_department": self.applicant_department.id,
             "describe": self.describe,
             "response_time_limit": self.response_time_limit,
             "slove_time_limit": self.slove_time_limit
@@ -114,13 +116,17 @@ class Itsm_Reception_Trouble_Repair(models.Model):
     itsm_id = fields.Char("id")
     name = fields.Char(string="名称")
     applicant_name = fields.Many2one("res.users", string="申请人姓名", compute="_compute_name", store=True)
+    service_type = fields.Many2one('itsm.service_type', string='故障类别')
+    applicant_department = fields.Many2one('itsm.department',string='故障事件部门')
     phone = fields.Char(string="手机号码")
     telephone = fields.Char(string="联系电话")
+    device_number = fields.Char(string='设备资产编号')
     position = fields.Char(related="applicant_name.position_id.name", string="位置", store=True)
     room_number = fields.Char(related="applicant_name.room_number", string="房间号", store=True)
     title = fields.Char(string="标题", store=True)
     fault_description = fields.Text(string="故障描述")
     time_of_appointment = fields.Datetime(string="预约上门时间")
+    number = fields.Char('服务单编号')
     enclosure = fields.Binary(string="附件")
     response_time_limit = fields.Char(string="响应时限（时）")
     slove_time_limit = fields.Char(string="解决时限（时）")
@@ -139,20 +145,23 @@ class Itsm_Reception_Trouble_Repair(models.Model):
             "name": self.name,
             "working_condition": "处理中",
             "priority": priority,
+            "server_id": self.number,
             "task_coding": coding,
             "title": self.title,
             "applicant_name": self.applicant_name.id,
+            "applicant_department": self.applicant_department.id,
             "phone": self.phone,
             "create_time": create_time,
             "enclosure": self.enclosure,
             "describe": self.fault_description,
             "response_time_limit": self.response_time_limit,
-            "slove_time_limit": self.slove_time_limit
+            "slove_time_limit": self.slove_time_limit,
+            "service_type": self.service_type.id
         }
         self.env["itsm.event_processing"].search([]).create(data)
         print(data)
 
-    def create_trouble_repair(self, name, id, emergency, response_time_limit, slove_time_limit):
+    def create_trouble_repair(self, name, id, emergency, response_time_limit, slove_time_limit,service_type):
         """
         创建故障申请模块
         """
@@ -162,10 +171,11 @@ class Itsm_Reception_Trouble_Repair(models.Model):
             "emergency": str(emergency),
             "response_time_limit": str(response_time_limit),
             "slove_time_limit": str(slove_time_limit),
+            "service_type":service_type
         }
         self.create(data)
 
-    def update_trouble_repair(self, name, id, emergency, response_time_limit, slove_time_limit):
+    def update_trouble_repair(self, name, id, emergency, response_time_limit, slove_time_limit,service_type):
         """
         更新故障申请模块
         """
@@ -176,6 +186,7 @@ class Itsm_Reception_Trouble_Repair(models.Model):
             "emergency": str(emergency),
             "response_time_limit": str(response_time_limit),
             "slove_time_limit": str(slove_time_limit),
+            "service_type": service_type
         }
         this.write(data)
 
@@ -210,6 +221,8 @@ class Itsm_Reception_Trouble_Repair(models.Model):
         }
         return action
 
+
+
 class Itsm_Failure_registration(models.Model):
     """
     故障登记模块
@@ -225,6 +238,7 @@ class Itsm_Failure_registration(models.Model):
     position = fields.Char(related="applicant_name.position_id.name", string="位置", store=True)
     room_number = fields.Char(related="applicant_name.room_number", string="房间号", store=True)
     title = fields.Char(string="标题", store=True)
+    device_number = fields.Char("设备资产编号")
     fault_description = fields.Text(string="故障描述", required=True)
     time_of_appointment = fields.Datetime(string="预约上门时间", required=True)
     enclosure = fields.Binary(string="附件")
@@ -253,6 +267,7 @@ class Itsm_Failure_registration(models.Model):
             "task_coding": coding,
             "title": self.title,
             "applicant_name": self.applicant_name.id,
+            "device_number":self.device_number,
             "phone": self.phone,
             "create_time": create_time,
             "describe": self.fault_description,
